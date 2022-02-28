@@ -34,6 +34,7 @@ body {
   height: 150px;
   margin-top: 10px;
   border-radius: 4px;
+  overflow: auto;
 }
 
 .numbers-container {
@@ -45,7 +46,6 @@ body {
   justify-content: flex-end;
   align-items: flex-end;
   padding: 5px;
-  overflow: hidden;
 }
 
 #numbers {
