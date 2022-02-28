@@ -40,14 +40,13 @@ function displayNum() {
       const { previousKeyType } = calculator.dataset;
 
       if (type === "digit") {
-        if (displayValue === "0") {
-          display.textContent = buttonValue;
-        } else if (previousKeyType === "operator") {
+        if (displayValue === "0" || previousKeyType === "operator") {
           display.textContent = buttonValue;
         } else {
           display.textContent = displayValue + buttonValue;
         }
       }
+
       if (type === "operator") {
         operatorButtons.forEach((button) => {
           button.dataset.state = "";
@@ -60,11 +59,17 @@ function displayNum() {
 
       if (type === "equal") {
         const num1 = parseInt(calculator.dataset.num1);
-        const operator = calculator.dataset.operator;
         const num2 = parseInt(displayValue);
+        const operator = calculator.dataset.operator;
         let result = operate(operator, num1, num2);
 
         display.textContent = result;
+      }
+
+      if (type === "clear") {
+        display.textContent = "0";
+        delete calculator.dataset.num1;
+        delete calculator.dataset.operator;
       }
       calculator.dataset.previousKeyType = type;
     });
