@@ -31,6 +31,10 @@ function operate(operator, num1, num2) {
   }
 }
 
+function roundToTwo(result) {
+  return +(Math.round(result + "e+2") + "e-2");
+}
+
 function displayNum() {
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -63,7 +67,7 @@ function displayNum() {
         const operator = calculator.dataset.operator;
         let result = operate(operator, num1, num2);
 
-        display.textContent = result;
+        display.textContent = roundToTwo(result);
       }
 
       if (type === "clear") {
