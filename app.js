@@ -31,8 +31,8 @@ function operate(operator, num1, num2) {
   }
 }
 
-function roundToTwo(result) {
-  return +(Math.round(result + "e+2") + "e-2");
+function roundToFour(result) {
+  return +(Math.round(result + "e+4") + "e-4");
 }
 
 function displayNum() {
@@ -67,7 +67,7 @@ function displayNum() {
         const operator = calculator.dataset.operator;
         let result = operate(operator, num1, num2);
 
-        display.textContent = roundToTwo(result);
+        display.textContent = roundToFour(result);
       }
 
       if (type === "clear") {
