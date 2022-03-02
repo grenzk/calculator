@@ -44,7 +44,11 @@ function displayNum() {
       const { previousKeyType } = calculator.dataset;
 
       if (type === "digit") {
-        if (displayValue === "0" || previousKeyType === "operator") {
+        if (
+          displayValue === "0" ||
+          previousKeyType === "operator" ||
+          previousKeyType === "equal"
+        ) {
           display.textContent = buttonValue;
         } else {
           display.textContent = displayValue + buttonValue;
