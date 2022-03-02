@@ -67,7 +67,13 @@ function displayNum() {
         const operator = calculator.dataset.operator;
         let result = operate(operator, num1, num2);
 
-        display.textContent = roundToFour(result);
+        if (result === Infinity) {
+          display.textContent = Infinity;
+        } else if (Number.isNaN(result)) {
+          display.textContent = "Error";
+        } else {
+          display.textContent = roundToFour(result);
+        }
       }
 
       if (type === "clear") {
