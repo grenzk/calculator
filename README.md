@@ -16,6 +16,10 @@ The final project in **_Foundations > JavaScript Basics_** (The Odin Project) is
 - DOM Manipulation and Events
 - Fundamentals Part V
 
+## Live Demo
+
+Github Page (https://grenzk.github.io/calculator/)
+
 ## Source
 
 The Odin Project (https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator)
